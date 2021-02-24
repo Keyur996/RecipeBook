@@ -1,0 +1,20 @@
+<div class="p-grid">
+   <div class="p-col-10">
+      <div class="p-panel p-component p-mt-3">
+         <div class="p-panel-header p-text-center" style="padding: 0.5rem;">
+            <b style="font-size: 24px;">{{ recipe.name }}</b>
+         </div>
+         <div class="p-panel-content">
+            <div class="p-text-center">
+               <img [src]='recipe.imagePath'
+               alt="{{ recipe.name }}" style="max-height: 300px; width: 70%;">
+            </div>
+            <div class="p-grid p-formgrid p-m-3">
+               <div class="p-col-12 p-offset-1 line-clamp">
+                  {{ recipe.description }}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

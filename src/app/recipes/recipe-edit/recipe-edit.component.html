@@ -1,0 +1,42 @@
+<div class="p-panel p-component">
+    <div class="p-panel-header">
+        <b>Add Recipe Form</b>
+    </div>
+
+    <div class="p-panel-content">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="p-mt-2">
+            <button class="p-button p-mr-1"
+            type="submit" label="Save"
+            [disabled]="!recipeForm.valid" pButton pRipple></button>
+            <button type="button" class="p-button-danger p-mr-1" 
+            (click)="onCancel()" label="Cancel" pButton pRipple></button>
+            <div class="p-fluid p-mt-2">
+                <div class="p-field">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        formControlName="name"
+                        class="form-control" pInputText>
+                </div>
+                <div class="p-field">
+                    <label for="imagePath">Image URL</label>
+                    <input
+                        type="text"
+                        id="imagePath"
+                        formControlName="imagePath"
+                        class="form-control"
+                        #imagePath pInputText>
+                </div>
+                <img [src]="imagePath.value" class="image-container" style="height: 300px;">
+                <div class="p-field">
+                    <label for="description">Description</label>
+                    <textarea
+                        type="text"
+                        id="description" formControlName="description" rows="3" 
+                        pInputTextarea></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

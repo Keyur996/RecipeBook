@@ -1,0 +1,17 @@
+<div class="p-grid">
+   <div class="p-col-10">
+      <app-shopping-edit></app-shopping-edit>
+      <hr>
+      <div class="p-orderlist p-component">
+         <div class="p-orderlist-list-container">
+            <ul class="p-orderlist-list" style="height: auto;margin: 0px !important;">
+               <li class="p-orderlist-item p-ripple" style="display: block;" *ngFor="let ingredient of ingredients">
+                  <div class="product-list-detail">
+                     {{ ingredient.name }} ({{ ingredient.amount }})
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>

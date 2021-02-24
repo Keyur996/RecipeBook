@@ -1,0 +1,16 @@
+.product-item {
+   display: flex;
+   align-items: center;
+   padding: .5rem;
+   width: 100%;
+}
+
+.image-container{
+   margin-right: 10px;
+}
+
+.active {
+   background-color: #007bff !important;
+   color: white !important;
+   box-shadow: none !important;
+}

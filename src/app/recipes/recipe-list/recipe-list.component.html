@@ -1,0 +1,24 @@
+<div class="p-ml-3">
+   <div class="p-grid">
+      <div class="p-col-12"> 
+         <button class="p-button-raised p-button-primary" 
+         label="New Recipe" (click)="onNewRecipe()"
+         icon="pi pi-file-o" pButton pRipple></button>
+      </div>
+   </div>
+   <div class="p-grid">
+      <div class="p-col-12"> 
+         <div class="p-orderlist p-component">
+            <div class="p-orderlist-list-container">
+               <div class="p-orderlist-header" style="border-bottom: 1px solid #e0e0e0;">
+                  <div class="p-orderlist-title">List of Recipes</div>
+               </div>
+               <app-recipe-item *ngFor="let recipe of recipes; let i=index"
+                [recipe]="recipe"
+                [index]="i"
+                ></app-recipe-item>
+            </div>
+         </div>
+      </div>  
+   </div>
+</div>

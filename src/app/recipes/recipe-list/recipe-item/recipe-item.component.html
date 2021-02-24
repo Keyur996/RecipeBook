@@ -1,0 +1,19 @@
+<div class="p-orderlist p-component">
+   <div class="p-orderlist-list-container">
+      <ul class="p-orderlist-list" style="height: auto;margin: 0px !important; border-radius: 0px; border-top: none;">
+         <li class="p-orderlist-item"
+            [routerLink]="[index]" routerLinkActive="active" 
+            style="display: block;">
+            <div class="product-item ng-star-inserted">
+               <div class="image-container">
+                  <img [src]='recipe.imagePath' alt="{{ recipe.name }}" class="p-shadow-2" style="height: 50px;">
+               </div>
+               <div class="product-list-detail">
+                  <b> {{ recipe.name }} </b> <br>
+                  <span> <em> {{ recipe.description }} </em> </span>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+</div>
