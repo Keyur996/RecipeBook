@@ -1,16 +1,11 @@
 <div class="p-panel p-component">
     <div class="p-panel-header">
-        <b>Add Recipe Form</b>
+        <b>{{ !editMode ? 'Add Recipe Form' : 'Update Recipe Form' }}</b>
     </div>
 
     <div class="p-panel-content">
         <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="p-mt-2">
-            <button class="p-button p-mr-1"
-            type="submit" label="Save"
-            [disabled]="!recipeForm.valid" pButton pRipple></button>
-            <button type="button" class="p-button-danger p-mr-1" 
-            (click)="onCancel()" label="Cancel" pButton pRipple></button>
-            <div class="p-fluid p-mt-2">
+            <div class="p-fluid p-mt-2 p-d-flex p-flex-column">
                 <div class="p-field">
                     <label for="name">Name</label>
                     <input
@@ -28,7 +23,7 @@
                         class="form-control"
                         #imagePath pInputText>
                 </div>
-                <img [src]="imagePath.value" class="image-container" style="height: 300px;">
+                <img [src]="imagePath.value" class="image-container p-as-center" style="height: 150pxpx; width: 250px;">
                 <div class="p-field">
                     <label for="description">Description</label>
                     <textarea
@@ -37,6 +32,11 @@
                         pInputTextarea></textarea>
                 </div>
             </div>
+            <button class="p-button p-mr-1"
+            type="submit" label="Save"
+            [disabled]="!recipeForm.valid" pButton pRipple></button>
+            <button type="button" class="p-button-danger p-mr-1" 
+            (click)="onCancel()" label="Cancel" pButton pRipple></button>
         </form>
     </div>
 </div>

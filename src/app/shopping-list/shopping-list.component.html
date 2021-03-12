@@ -5,7 +5,7 @@
       <div class="p-orderlist p-component">
          <div class="p-orderlist-list-container">
             <ul class="p-orderlist-list" style="height: auto;margin: 0px !important;">
-               <li class="p-orderlist-item p-ripple" style="display: block;" *ngFor="let ingredient of ingredients">
+               <li class="p-orderlist-item p-ripple" style="display: block;" *ngFor="let ingredient of ingredients; let i = index" (click) = "onEditItem(i)" >
                   <div class="product-list-detail">
                      {{ ingredient.name }} ({{ ingredient.amount }})
                   </div>

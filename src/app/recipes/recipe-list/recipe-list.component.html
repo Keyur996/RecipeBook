@@ -13,10 +13,12 @@
                <div class="p-orderlist-header" style="border-bottom: 1px solid #e0e0e0;">
                   <div class="p-orderlist-title">List of Recipes</div>
                </div>
-               <app-recipe-item *ngFor="let recipe of recipes; let i=index"
-                [recipe]="recipe"
-                [index]="i"
-                ></app-recipe-item>
+               <div style="height: 60vh; overflow: auto;">
+                  <app-recipe-item *ngFor="let recipe of recipes; let i=index"
+                  [recipe]="recipe"
+                  [index]="i"
+                  ></app-recipe-item>
+               </div>
             </div>
          </div>
       </div>  

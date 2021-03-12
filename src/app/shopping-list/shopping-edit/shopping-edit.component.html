@@ -1,6 +1,6 @@
 <div class="p-col-10 p-md-6">
    <div class="p-panel p-component">
-      <form>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
          <div class="p-panel-header">
             <b>Ingredient Form</b>
          </div>
@@ -8,20 +8,20 @@
             <div class="p-grid p-fluid p-formgrid">
                <div class="p-field p-col-10 p-md-6 p-lg-6 p-mt-3">
                   <span class="p-float-label">
-                     <input type="text" name="name" id="float-input" pInputText>
+                     <input type="text" name="name" id="float-input"  ngModel required  pInputText>
                      <label for="float-input">Name</label>
                   </span>
                </div>
                <div class="p-field p-col-10 p-md-6 p-lg-6 p-mt-3">
                   <span class="p-float-label">
-                     <input type="text" name="amount" id="float-input" pInputText>
+                     <input type="text" name="amount" id="float-input" ngModel required pattern="^[1-9]+[0-9]*$" pInputText>
                      <label for="float-input">Amount</label>
                   </span>
                </div>
             </div>
-            <button class="p-button-primary p-button-raised p-mr-1" icon='pi pi-plus' type="button" label='Add' pButton pRipple></button>
-            <button class="p-button-warning p-button-raised p-mr-1" icon='pi pi-pencil' type="button" label='Update' pButton pRipple></button>
-            <button class="p-button-danger p-button-raised p-mr-1" icon='pi pi-trash' type="button" label='Delete' pButton pRipple></button>
+            <button class="p-button p-component p-button-primary p-button-raised p-mr-1" type="submit">{{ editMode ? 'Update' : 'Add'}}</button>
+            <button class="p-button p-component p-button-warning p-button-raised p-mr-1" (click) = 'onDelete()'  type="button" *ngIf= "editMode"> Delete </button>
+            <button class="p-button p-component p-button-danger p-button-raised p-mr-1" (click) = 'onClear()' type="button"> Clear </button>
          </div>
       </form>
    </div>

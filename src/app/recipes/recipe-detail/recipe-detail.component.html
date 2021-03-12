@@ -4,19 +4,21 @@
          <div class="p-panel-header p-text-center" style="padding: 0.5rem;">
             <b style="font-size: 24px;">{{ recipe.name }}</b>
          </div>
-         <div class="p-panel-content">
-            <div class="p-text-center">
+         <div class="p-panel-content p-d-flex p-flex-column">
+            <div class="p-text-center p-as-center">
                <img [src]='recipe.imagePath'
-               alt="{{ recipe.name }}" style="max-height: 300px; width: 70%;">
+               alt="{{ recipe.name }}" style="height: 300px; width: 70%;">
             </div>
             <div class="p-grid p-formgrid p-m-3">
                <div class="p-col-12 p-offset-1 line-clamp">
                   {{ recipe.description }}
                </div>
             </div>
-            <hr>
-            <button type="button" (click)="onEdit()" label='Edit' icon='pi pi-pencil' class="p-button-warning p-mr-1" pButton pRipple></button>
-            <button type="button" (click)="onDelete()" label='Delete' icon='pi pi-trash' class="p-button-danger" pButton pRipple></button>
+            <hr />
+            <div>
+               <button type="button" (click)="onEdit()" label='Edit' icon='pi pi-pencil' class="p-button-warning p-mr-1" pButton pRipple></button>
+               <button type="button" (click)="onDelete()" label='Delete' icon='pi pi-trash' class="p-button-danger" pButton pRipple></button>
+            </div>
          </div>
       </div>
    </div>
